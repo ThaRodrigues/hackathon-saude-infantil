@@ -5,12 +5,12 @@ import java.util.Date;
 // TODO - incluir annotations para JPA
 public class Agente {
 
-
     private String nome;
     private String sobrenome;
     private Date dataNascimento;
     private String email;
     private String cargo;
+    private boolean ativo;
 
     public Agente() { }
 
@@ -52,5 +52,13 @@ public class Agente {
 
     public void setCargo(String cargo) {
         this.cargo = cargo;
+    }
+
+    public boolean isAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo) {
+        this.ativo = ativo;
     }
 }

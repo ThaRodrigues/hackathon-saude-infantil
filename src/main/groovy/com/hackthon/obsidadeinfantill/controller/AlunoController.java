@@ -2,15 +2,18 @@ package com.hackthon.obsidadeinfantill.controller;
 
 import com.hackthon.obsidadeinfantill.domain.Aluno;
 import com.hackthon.obsidadeinfantill.service.AlunoService;
-import com.opencsv.CSVReader;
-import com.opencsv.CSVReaderBuilder;
+import com.hackthon.obsidadeinfantill.utils.CsvUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
-import java.nio.file.Files;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -23,28 +26,36 @@ public class AlunoController {
         this.alunoService = alunoService;
     }
 
-   // @PostMapping
-    // public Aluno criar(@RequestBody Aluno aluno){
-    //   return alunoService.salvar(aluno);
-    //}
-
-
     @PostMapping
-    public void teste(@RequestParam("file") MultipartFile file) throws IOException {
+     public Aluno criar(@RequestBody Aluno aluno){
+       return alunoService.salvar(aluno);
+    }
 
-        System.out.println(file.getName());
+
+    @PostMapping("/importacao")
+    public void importacao(@RequestParam("file") MultipartFile file) throws IOException {
+
+        Logger logger = LoggerFactory.getLogger(AlunoController.class);
+
+        Collection<Aluno> alunos = new ArrayList<>();
 
         Reader reader = new InputStreamReader(file.getInputStream());
 
-        CSVReader csvReader = new CSVReaderBuilder(reader).withSkipLines(1).build();
+        BufferedReader br = null;
+        String line = "";
+        String cvsSplitBy = ",";
+        int i = 0;
 
-        List<String[]> pessoas = csvReader.readAll();
+        br = new BufferedReader(reader);
+        while ((line = br.readLine()) != null) {
+            if(i == 0){
+                i++;
+                continue;
+            }
 
-
-        for (String[] pessoa : pessoas)
-            System.out.println("Name : " + pessoa[0] );
-
-
-
+            String[] pessoa = line.split(cvsSplitBy);
+            List<String> linha = CsvUtils.parseLine(line);
+            System.out.println(linha.toString());
+        }
     }
 }
