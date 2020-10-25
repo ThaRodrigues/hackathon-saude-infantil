@@ -26,7 +26,7 @@ public class Aluno {
     private String nome;
 
     @Column(name = "IDADE")
-    private int idade;
+    private Integer idade;
 
     @Column(name = "ALTURA")
     private BigDecimal altura;
@@ -89,11 +89,11 @@ public class Aluno {
         this.idEscola = idEscola;
     }
 
-    public int getIdade() {
+    public Integer getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(Integer idade) {
         this.idade = idade;
     }
 
@@ -103,6 +103,7 @@ public class Aluno {
         aluno.setNome(campos.get(0));
         aluno.setPeso(campos.get(1).isEmpty() ? null : new BigDecimal(campos.get(1)));
         aluno.setAltura(campos.get(2).isEmpty() ? null : new BigDecimal(campos.get(2)));
+        aluno.setIdade(campos.get(3).isEmpty() ? null : Integer.parseInt(campos.get(3)));
 
         return aluno;
     }
