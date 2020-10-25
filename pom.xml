@@ -124,11 +124,10 @@
 		</plugins>
 	</build>
 	<distributionManagement>
-		<relocation>
-			<groupId>org.apache</groupId>
-			<artifactId>my-project</artifactId>
-			<version>1.0</version>
-			<message>We have moved the Project under Apache</message>
-		</relocation>
+		<site>
+			<id>mojo.website</id>
+			<name>Mojo Website</name>
+			<url>scp://beaver.codehaus.org/home/projects/mojo/public_html/</url>
+		</site>
 	</distributionManagement>
 </project>
