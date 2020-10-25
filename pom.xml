@@ -124,10 +124,11 @@
 		</plugins>
 	</build>
 	<distributionManagement>
-		<repository>
-			<id>internal.repo</id>
-			<name>Internal repo</name>
-			<url>file:///home/thara/testesb/in</url>
-		</repository>
+		<relocation>
+			<groupId>org.apache</groupId>
+			<artifactId>my-project</artifactId>
+			<version>1.0</version>
+			<message>We have moved the Project under Apache</message>
+		</relocation>
 	</distributionManagement>
 </project>
