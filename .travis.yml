@@ -10,7 +10,7 @@ install:
   - "mvn -N io.takari:maven:wrapper -Dmaven=${MAVEN_VERSION}"
 #  - "./mvnw --show-version --errors --batch-mode test-compile dependency:go-offline"
 script:
-  - mvn deploy --settings settings.xml
+#  - mvn deploy --settings settings.xml
   - mvn -Duser=thaina_ftp -Dpassword=mGate123! install
 #  "./mvnw --show-version --errors --batch-mode -Prun-its clean verify"
 cache:
