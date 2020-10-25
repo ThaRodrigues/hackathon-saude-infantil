@@ -55,7 +55,11 @@ public class AlunoController {
 
             String[] pessoa = line.split(cvsSplitBy);
             List<String> linha = CsvUtils.parseLine(line);
-            System.out.println(linha.toString());
+            Aluno aluno =  Aluno.criar(linha);
+            alunos.add(aluno);
         }
+
+        alunoService.salvar(alunos);
+        logger.info("Importação feita com sucesso");
     }
 }

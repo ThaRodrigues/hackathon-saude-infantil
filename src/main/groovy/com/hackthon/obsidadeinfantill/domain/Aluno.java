@@ -13,14 +13,6 @@ public class Aluno {
     private BigDecimal peso;
     private Long idEscola;
 
-
-    public Aluno(String [] texto) {
-        this.uuid =  UUID.randomUUID();
-        this.nome = texto[0];
-        this.altura = new BigDecimal(texto[1]);
-        this.peso = new BigDecimal(texto[2]);
-    }
-
     public Aluno(){
         this.uuid =  UUID.randomUUID();
     }
