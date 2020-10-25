@@ -10,6 +10,7 @@ public class Aluno {
     private String nome;
     private BigDecimal altura;
     private BigDecimal peso;
+    private Long idEscola;
 
 
     public Aluno(String [] texto) {
@@ -17,6 +18,14 @@ public class Aluno {
         this.nome = texto[0];
         this.altura = new BigDecimal(texto[1]);
         this.peso = new BigDecimal(texto[2]);
+    }
+
+    public Long getIdEscola() {
+        return idEscola;
+    }
+
+    public void setIdEscola(Long idEscola) {
+        this.idEscola = idEscola;
     }
 
     public Aluno(){
