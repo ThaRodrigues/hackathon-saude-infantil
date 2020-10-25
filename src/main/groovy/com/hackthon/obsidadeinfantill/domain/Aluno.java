@@ -25,6 +25,9 @@ public class Aluno {
     @Column(name = "NOME")
     private String nome;
 
+    @Column(name = "IDADE")
+    private int idade;
+
     @Column(name = "ALTURA")
     private BigDecimal altura;
 
@@ -84,6 +87,14 @@ public class Aluno {
 
     public void setIdEscola(Long idEscola) {
         this.idEscola = idEscola;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 
     public static Aluno criar(List<String> campos){
