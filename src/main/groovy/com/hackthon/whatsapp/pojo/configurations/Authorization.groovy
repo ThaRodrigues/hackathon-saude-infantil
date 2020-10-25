@@ -4,8 +4,8 @@ import javax.xml.bind.DatatypeConverter
 
 class Authorization {
 
-    private static final String userName = "thaimain"
-    private static final String password = "Moca2801@@"
+    private static final String userName = "xxxx"
+    private static final String password = "xxxx"
 
 
     String getAuthorizationBase64(){
