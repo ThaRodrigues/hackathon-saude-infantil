@@ -1,4 +1,4 @@
-package com.hackthon.whatsapp.pojo.request
+package com.hackthon.whatsapp.pojo.outboundMessage
 
 class To {
     private String phoneNumber

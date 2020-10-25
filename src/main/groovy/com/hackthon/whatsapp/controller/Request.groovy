@@ -1,6 +1,10 @@
-package com.hackthon.whatsapp.pojo.request
+package com.hackthon.whatsapp.controller
 
-import com.hackthon.whatsapp.Authorization
+import com.hackthon.whatsapp.pojo.configurations.Authorization
+import com.hackthon.whatsapp.pojo.outboundMessage.Destination
+import com.hackthon.whatsapp.pojo.outboundMessage.RequestBody
+import com.hackthon.whatsapp.pojo.outboundMessage.To
+import com.hackthon.whatsapp.pojo.outboundMessage.WhatsApp
 
 class Request {
 

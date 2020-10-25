@@ -1,5 +1,4 @@
-package com.hackthon.whatsapp.pojo.request
-import com.fasterxml.jackson.*
+package com.hackthon.whatsapp.pojo.outboundMessage
 import com.fasterxml.jackson.databind.ObjectMapper
 
 class RequestBody {
@@ -32,7 +31,6 @@ class RequestBody {
     void setWhatsApp(WhatsApp whatsApp) {
         this.whatsApp = whatsApp
     }
-
 
     @Override
     String toString() {

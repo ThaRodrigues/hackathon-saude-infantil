@@ -1,4 +1,4 @@
-package com.hackthon.whatsapp
+package com.hackthon.whatsapp.pojo.configurations
 
 import javax.xml.bind.DatatypeConverter
 
