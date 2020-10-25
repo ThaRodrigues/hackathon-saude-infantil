@@ -24,7 +24,7 @@ public class Agente {
     private String sobrenome;
 
     @Column(name = "DATA_NASCIMENTO")
-    private Date dataNascimento;
+    private String dataNascimento;
 
     @Column(name = "EMAIL")
     private String email;
@@ -64,14 +64,6 @@ public class Agente {
         this.sobrenome = sobrenome;
     }
 
-    public Date getDataNascimento() {
-        return dataNascimento;
-    }
-
-    public void setDataNascimento(Date dataNascimento) {
-        this.dataNascimento = dataNascimento;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -102,5 +94,13 @@ public class Agente {
 
     public void setCelular(String celular) {
         this.celular = celular;
+    }
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+    public String getDataNascimento() {
+        return dataNascimento;
     }
 }
