@@ -11,6 +11,15 @@ public class Aluno {
     private String nome;
     private BigDecimal altura;
     private BigDecimal peso;
+    private Long idEscola;
+
+
+    public Aluno(String [] texto) {
+        this.uuid =  UUID.randomUUID();
+        this.nome = texto[0];
+        this.altura = new BigDecimal(texto[1]);
+        this.peso = new BigDecimal(texto[2]);
+    }
 
     public Aluno(){
         this.uuid =  UUID.randomUUID();
@@ -46,6 +55,14 @@ public class Aluno {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Long getIdEscola() {
+        return idEscola;
+    }
+
+    public void setIdEscola(Long idEscola) {
+        this.idEscola = idEscola;
     }
 
     public static Aluno criar(List<String> campos){
