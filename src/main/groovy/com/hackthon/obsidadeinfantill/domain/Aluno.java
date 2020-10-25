@@ -10,7 +10,13 @@ import java.util.UUID;
 public class Aluno {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue( strategy = GenerationType.SEQUENCE,
+            generator = "aluno_id_seq")
+    @SequenceGenerator(
+            name = "aluno_id_seq",
+            sequenceName = "aluno_id_sequence",
+            allocationSize = 1
+    )
     private Long id;
 
     @Column(name = "UUID")
@@ -30,6 +36,14 @@ public class Aluno {
 
     public Aluno(){
         this.uuid =  UUID.randomUUID();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public UUID getUuid() {
@@ -76,8 +90,8 @@ public class Aluno {
 
         Aluno aluno = new Aluno();
         aluno.setNome(campos.get(0));
-        aluno.setPeso(new BigDecimal(campos.get(1)));
-        aluno.setAltura(new BigDecimal(campos.get(2)));
+        aluno.setPeso(campos.get(1).isEmpty() ? null : new BigDecimal(campos.get(1)));
+        aluno.setAltura(campos.get(2).isEmpty() ? null : new BigDecimal(campos.get(2)));
 
         return aluno;
     }
