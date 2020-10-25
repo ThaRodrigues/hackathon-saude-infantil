@@ -6,6 +6,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class AlunoService {
 
+    //chamar a repository
+
     public Aluno buscarAluno(String uuid){
         return new Aluno();
     }

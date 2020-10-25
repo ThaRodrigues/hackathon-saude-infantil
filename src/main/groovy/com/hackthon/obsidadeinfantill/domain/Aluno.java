@@ -3,15 +3,12 @@ package com.hackthon.obsidadeinfantill.domain;
 import java.math.BigDecimal;
 import java.util.UUID;
 
+// TODO - incluir annotations para JPA
 public class Aluno {
 
-
     private UUID uuid;
-
     private String nome;
-
     private BigDecimal altura;
-
     private BigDecimal peso;
 
 
