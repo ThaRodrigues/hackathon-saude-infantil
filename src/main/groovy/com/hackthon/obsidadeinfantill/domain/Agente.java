@@ -8,7 +8,13 @@ import java.util.Date;
 public class Agente {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue( strategy = GenerationType.SEQUENCE,
+            generator = "agente_id_seq")
+    @SequenceGenerator(
+            name = "agente_id_seq",
+            sequenceName = "agente_id_sequence",
+            allocationSize = 1
+    )
     private Long id;
 
     @Column(name = "NOME")
@@ -27,7 +33,10 @@ public class Agente {
     private String cargo;
 
     @Column(name = "ATIVO")
-    private boolean ativo;
+    private String ativo;
+
+    @Column(name = "CELULAR")
+    private String celular;
 
     public Agente() { }
 
@@ -79,11 +88,19 @@ public class Agente {
         this.cargo = cargo;
     }
 
-    public boolean isAtivo() {
+    public String getAtivo() {
         return ativo;
     }
 
-    public void setAtivo(boolean ativo) {
+    public void setAtivo(String ativo) {
         this.ativo = ativo;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 }
