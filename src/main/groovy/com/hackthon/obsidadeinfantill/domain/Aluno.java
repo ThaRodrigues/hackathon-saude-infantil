@@ -1,16 +1,31 @@
 package com.hackthon.obsidadeinfantill.domain;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-// TODO - incluir annotations para JPA
+@Entity
+@Table(name = "aluno")
 public class Aluno {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "UUID")
     private UUID uuid;
+
+    @Column(name = "NOME")
     private String nome;
+
+    @Column(name = "ALTURA")
     private BigDecimal altura;
+
+    @Column(name = "PESO")
     private BigDecimal peso;
+
+    @Column(name = "ID_ESCOLA")
     private Long idEscola;
 
     public Aluno(){

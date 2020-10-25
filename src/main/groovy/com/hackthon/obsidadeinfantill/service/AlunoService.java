@@ -1,24 +1,30 @@
 package com.hackthon.obsidadeinfantill.service;
 
 import com.hackthon.obsidadeinfantill.domain.Aluno;
+import com.hackthon.obsidadeinfantill.repository.AlunoRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
+import java.util.Optional;
 
 @Service
 public class AlunoService {
 
-    //chamar a repository
+    private final AlunoRepository alunoRepository;
 
-    public Aluno buscarAluno(String uuid){
-        return new Aluno();
+    public AlunoService(AlunoRepository alunoRepository) {
+        this.alunoRepository = alunoRepository;
+    }
+
+    public Optional<Aluno> buscarAluno(String uuid){
+        return alunoRepository.findByUuid(uuid);
     }
 
     public Aluno salvar(Aluno aluno){
-        return aluno;
+        return alunoRepository.save(aluno);
     }
 
     public Collection<Aluno> salvar(Collection<Aluno> alunos){
-        return null;
+        return alunoRepository.saveAll(alunos);
     }
 }

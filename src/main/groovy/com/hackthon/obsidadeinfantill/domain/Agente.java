@@ -1,15 +1,32 @@
 package com.hackthon.obsidadeinfantill.domain;
 
+import javax.persistence.*;
 import java.util.Date;
 
-// TODO - incluir annotations para JPA
+@Entity
+@Table(name = "agemte")
 public class Agente {
 
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(name = "NOME")
     private String nome;
+
+    @Column(name = "SOBRENOME")
     private String sobrenome;
+
+    @Column(name = "DATA_NASCIMENTO")
     private Date dataNascimento;
+
+    @Column(name = "EMAIL")
     private String email;
+
+    @Column(name = "CARGO")
     private String cargo;
+
+    @Column(name = "ATIVO")
     private boolean ativo;
 
     public Agente() { }

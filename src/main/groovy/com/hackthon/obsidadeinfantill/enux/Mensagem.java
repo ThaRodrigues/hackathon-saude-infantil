@@ -59,7 +59,7 @@ public enum Mensagem {
         @Override
         public BotSession validarMensagem(BotSession botSession, String mensagem){
 
-            Aluno aluno = alunoService.buscarAluno(mensagem.replace(" ",""));
+            Aluno aluno = alunoService.buscarAluno(mensagem.replace(" ","")).orElse(null);
 
             if(aluno != null){
                 botSession.setUltimaMensagem(Mensagem.ALTURA_ALUNO);

@@ -1,18 +1,46 @@
 package com.hackthon.obsidadeinfantill.domain.Escola;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "escola")
 public class Escola {
 
-    private String nomeEscola;
-    private String telefone;
-    private Endereco endereco;
-    private Reitor reitor;
+    @Id
+    @GeneratedValue
+    private Long id;
 
-    public String getNomeEscola() {
-        return nomeEscola;
+    @Column(name = "NOME")
+    private String nome;
+
+    @Column(name = "TELEFONE")
+    private String telefone;
+
+    // TODO - alterar esse objeto
+    @Transient
+    private Endereco endereco;
+
+    @Column(name = "ID_REITOR")
+    private Long idReitor;
+
+
+    public Escola() {
     }
 
-    public void setNomeEscola(String nomeEscola) {
-        this.nomeEscola = nomeEscola;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getTelefone() {
@@ -31,11 +59,11 @@ public class Escola {
         this.endereco = endereco;
     }
 
-    public Reitor getReitor() {
-        return reitor;
+    public Long getIdReitor() {
+        return idReitor;
     }
 
-    public void setReitor(Reitor reitor) {
-        this.reitor = reitor;
+    public void setIdReitor(Long idReitor) {
+        this.idReitor = idReitor;
     }
 }
