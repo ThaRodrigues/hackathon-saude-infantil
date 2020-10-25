@@ -1,0 +1,11 @@
+    <settings>
+      
+      <localRepository> ${user.home}/.m2/repository/</localRepository>
+        <servers>
+            <server>
+                <id>dev-repo</id>
+                <username>${user}</username>
+                <password>${password}</password>
+            </server>
+        </servers>
+    </settings>
