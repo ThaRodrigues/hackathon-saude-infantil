@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "agemte")
+@Table(name = "agente")
 public class Agente {
 
     @Id
@@ -30,6 +30,14 @@ public class Agente {
     private boolean ativo;
 
     public Agente() { }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNome() {
         return nome;

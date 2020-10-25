@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class AlunoService {
@@ -17,7 +18,7 @@ public class AlunoService {
     }
 
     public Optional<Aluno> buscarAluno(String uuid){
-        return alunoRepository.findByUuid(uuid);
+        return alunoRepository.findByUuid(UUID.fromString(uuid));
     }
 
     public Aluno salvar(Aluno aluno){
