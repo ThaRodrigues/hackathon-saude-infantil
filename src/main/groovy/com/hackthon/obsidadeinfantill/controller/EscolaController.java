@@ -2,10 +2,9 @@ package com.hackthon.obsidadeinfantill.controller;
 
 import com.hackthon.obsidadeinfantill.domain.Escola.Escola;
 import com.hackthon.obsidadeinfantill.service.EscolaService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Collection;
 
 @RestController
 @RequestMapping("/escola")
@@ -20,5 +19,10 @@ public class EscolaController {
     @PostMapping
     public Escola criar(@RequestBody Escola escola){
         return escolaService.criar(escola);
+    }
+
+    @GetMapping
+    public Collection<Escola> listagem(){
+        return escolaService.buscarTodos();
     }
 }

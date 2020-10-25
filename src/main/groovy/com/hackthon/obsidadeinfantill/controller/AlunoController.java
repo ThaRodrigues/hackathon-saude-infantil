@@ -26,6 +26,11 @@ public class AlunoController {
         this.alunoService = alunoService;
     }
 
+    @GetMapping
+    public Collection<Aluno> listagem(){
+        return alunoService.buscarTodos();
+    }
+
     @PostMapping
      public Aluno criar(@RequestBody Aluno aluno){
        return alunoService.salvar(aluno);

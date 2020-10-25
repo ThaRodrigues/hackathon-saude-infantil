@@ -17,6 +17,10 @@ public class AlunoService {
         this.alunoRepository = alunoRepository;
     }
 
+    public Collection<Aluno> buscarTodos(){
+        return alunoRepository.findAll();
+    }
+
     public Optional<Aluno> buscarAluno(String uuid){
         return alunoRepository.findByUuid(UUID.fromString(uuid));
     }
