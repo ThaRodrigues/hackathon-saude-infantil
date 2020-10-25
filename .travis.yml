@@ -1,4 +1,9 @@
+dist: xenial
 language: java
+addons:
+  apt:
+    packages:
+      - ant
 env:
   - MAVEN_VERSION=${MAVEN_VERSION}
 install:
