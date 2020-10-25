@@ -18,7 +18,7 @@ public class AlunoService {
         return aluno;
     }
 
-    public Aluno salvar(Collection<Aluno> alunos){
+    public Collection<Aluno> salvar(Collection<Aluno> alunos){
         return null;
     }
 }
